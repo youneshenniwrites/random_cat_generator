@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'injection_container.dart' as dependency_injector;
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  dependency_injector.init();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
