@@ -1,6 +1,6 @@
 # random_cat
 
-A new Flutter project.
+This Flutter project demonstrate the use of clean architecture to build a very basic mobile app.
 
 ## Getting Started
 
