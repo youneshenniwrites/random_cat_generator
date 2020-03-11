@@ -14,6 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Random Cat',
+      theme: ThemeData(
+        primaryColor: Colors.indigo,
+        accentColor: Colors.indigoAccent,
+      ),
       home: RandomCatScreen(),
     );
   }
