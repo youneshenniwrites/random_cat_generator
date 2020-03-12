@@ -41,7 +41,12 @@ class CallRandomCatProvider implements RandomCatProvider {
     );
 
     if (response.statusCode == 200) {
-      return RandomCatSerializer.fromJson(json.decode(response.body));
+      print(RandomCatSerializer.fromJson(
+        json.decode(response.body),
+      ));
+      return RandomCatSerializer.fromJson(
+        json.decode(response.body),
+      );
     } else {
       throw ServerException();
     }

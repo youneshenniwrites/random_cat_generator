@@ -7,7 +7,9 @@ class RandomCatSerializer extends RandomCat {
     @required String fileUrl,
   }) : super(fileUrl: fileUrl);
 
-  factory RandomCatSerializer.fromJson(Map<String, String> data) {
-    return RandomCatSerializer(fileUrl: data['file']);
+  factory RandomCatSerializer.fromJson(Map<String, dynamic> data) {
+    return RandomCatSerializer(
+      fileUrl: data['file'],
+    );
   }
 }

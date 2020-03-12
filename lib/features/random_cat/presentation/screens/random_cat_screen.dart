@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:random_cat/features/random_cat/domain/entities/random_cat.dart';
+import 'package:random_cat/features/core/constants/api.dart';
+import 'package:random_cat/features/random_cat/data/providers/random_cat_provider.dart';
+import 'package:random_cat/features/random_cat/domain/usecases/get_random_cat.dart';
 
 import '../../../../injection_container.dart';
+import '../../domain/entities/random_cat.dart';
 import '../bloc/random_cat_bloc.dart';
+import '../widgets/widgets.dart';
 
 class RandomCatScreen extends StatelessWidget {
   @override
@@ -20,94 +24,49 @@ class RandomCatScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => locator<RandomCatBloc>(),
       child: Center(
-        child: Column(
-          children: <Widget>[
-            BlocBuilder<RandomCatBloc, RandomCatState>(
-              builder: (context, state) {
-                if (state is Empty) {
-                  return MessageDisplay(
-                    message: 'No cat in here!!',
-                  );
-                } else if (state is Loading) {
-                  return LoadingWidget();
-                } else if (state is Error) {
-                  return MessageDisplay(
-                    message: state.message,
-                  );
-                } else if (state is Loaded) {
-                  return DisplayRandomCat(
-                    cat: state.randomCat.fileUrl as RandomCat,
-                  );
-                }
-              },
-            ),
-            RaisedButton(
-              child: Text('Show Random Cat'),
-              onPressed: () {},
-            ),
-          ],
-        ),
+        child: RandomCatWidget(),
       ),
     );
   }
 }
 
-class MessageDisplay extends StatelessWidget {
-  final String message;
-
-  const MessageDisplay({
+class RandomCatWidget extends StatelessWidget {
+  const RandomCatWidget({
     Key key,
-    @required this.message,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height / 2,
-      child: Center(
-        child: Text(
-          message,
-          style: TextStyle(fontSize: 20),
-          textAlign: TextAlign.center,
+    return Column(
+      children: <Widget>[
+        BlocBuilder<RandomCatBloc, RandomCatState>(
+          builder: (context, state) {
+            if (state is Empty) {
+              return MessageDisplay(
+                message: 'No cat in here!!',
+              );
+            } else if (state is Loading) {
+              return LoadingWidget();
+            } else if (state is Error) {
+              return MessageDisplay(
+                message: state.message,
+              );
+            } else if (state is Loaded) {
+              return RandomCatDisplay(
+                cat: state.randomCat,
+              );
+            }
+          },
         ),
-      ),
-    );
-  }
-}
-
-class LoadingWidget extends StatelessWidget {
-  const LoadingWidget({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height / 2,
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
-  }
-}
-
-class DisplayRandomCat extends StatelessWidget {
-  final RandomCat cat;
-
-  const DisplayRandomCat({
-    Key key,
-    @required this.cat,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height / 2,
-      child: Center(
-        child: Image.network(
-          cat.fileUrl,
+        RaisedButton(
+          child: Text('Show Random Cat'),
+          onPressed: () {
+            BlocProvider.of<RandomCatBloc>(context).add(
+              GetRandomCatEvent(),
+            );
+          },
         ),
-      ),
+      ],
     );
   }
 }
