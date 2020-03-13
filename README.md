@@ -1,6 +1,8 @@
-# random_cat
+# Random Cat Generator Using Clean Architecture
 
 This Flutter project demonstrate the use of clean architecture to build a very basic mobile app.
+
+![foo](https://user-images.githubusercontent.com/26605247/76625768-df278980-652f-11ea-997c-658cfc1a0fad.gif)
 
 ## Getting Started
 
