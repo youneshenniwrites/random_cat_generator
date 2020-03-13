@@ -4,15 +4,15 @@
 
 # Objective
 
-This Flutter project demonstrate the use of a clean architecture to build a very basic mobile app.
+This very basic Dart/Flutter project demonstrates the use of clean architecture to build a full stack application.
 
-The app is built mostly with pure Dart and a bit of Flutter for the UI.
+Users can use this application as a reference to strengthen their skills around designing apps with a clean architecture and wirting code using the SOLID design principles.
 
-Users can use this app as a reference to strengthen their skills around designing apps with a clean architecture and wirting code using the SOLID design principles.
+The code is mainly Dart (core business logic) with bits of Flutter (which you can swap with a UI library of your choice).
 
 # Structure
 
-- One Screen.
+- One screen.
 - One button.
 - One placeholder for cat images.
 
