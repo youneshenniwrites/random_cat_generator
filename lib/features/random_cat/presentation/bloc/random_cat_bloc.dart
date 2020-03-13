@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../../core/error/messages.dart';
+import '../../../../core/error/messages.dart';
 import '../../domain/entities/random_cat.dart';
 import '../../domain/usecases/get_random_cat.dart';
 

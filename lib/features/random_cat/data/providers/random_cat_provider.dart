@@ -3,8 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-import '../../../core/constants/api.dart';
-import '../../../core/error/exceptions.dart';
+import '../../../../core/core.dart';
 import '../serializers/random_cat_serializer.dart';
 
 /* 

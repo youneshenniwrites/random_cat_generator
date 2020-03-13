@@ -1,9 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 
-import '../../../core/error/exceptions.dart';
-import '../../../core/error/failures.dart';
-import '../../../core/network/network_info.dart';
+import '../../../../core/core.dart';
 import '../../domain/contracts/random_cat_contract.dart';
 import '../../domain/entities/random_cat.dart';
 import '../providers/random_cat_provider.dart';

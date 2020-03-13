@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../core/error/failures.dart';
-import '../../../core/usecases/usecase.dart';
+import '../../../../core/core.dart';
 import '../contracts/random_cat_contract.dart';
 import '../entities/random_cat.dart';
 

@@ -5,17 +5,17 @@ abstract class RandomCatState {}
 
 // * The four states of UI
 
-class Empty extends RandomCatState {}
+class Empty implements RandomCatState {}
 
-class Loading extends RandomCatState {}
+class Loading implements RandomCatState {}
 
-class Loaded extends RandomCatState {
+class Loaded implements RandomCatState {
   final RandomCat randomCat;
 
   Loaded({@required this.randomCat});
 }
 
-class Error extends RandomCatState {
+class Error implements RandomCatState {
   final String message;
 
   Error({@required this.message});

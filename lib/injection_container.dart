@@ -2,7 +2,7 @@ import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 
-import 'features/core/network/network_info.dart';
+import 'core/network/network_info.dart';
 import 'features/random_cat/data/implementations/random_cat_implementation.dart';
 import 'features/random_cat/data/providers/random_cat_provider.dart';
 import 'features/random_cat/domain/contracts/random_cat_contract.dart';
