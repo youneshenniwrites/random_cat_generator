@@ -6,7 +6,7 @@
 
 This Flutter project demonstrate the use of a clean architecture to build a very basic mobile app.
 
-The app is built mostly with purw dart and a bit of flutter.
+The app is built mostly with pure Dart and a bit of Flutter for the UI.
 
 Users can use this app as a reference to strengthen their skills around designing apps with a clean architecture and wirting code using the SOLID design principles.
 
@@ -25,4 +25,9 @@ Users can use this app as a reference to strengthen their skills around designin
 - A cat picture is displayed in the screen when the response is successful.
 - If no connection we show an error message.
 
+# References
+
+Clean architecture by [Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
+
+Youtube tutorials by [Reso Coder](https://www.youtube.com/watch?v=dc3B_mMrZ-Q).
 
